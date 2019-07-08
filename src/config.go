@@ -10,6 +10,7 @@ import (
 type Config struct {
 	Tables []struct {
 		Name string `yaml:"name"`
+		Truncate string `yaml:"truncate"`
 		Columns map[string]string `yaml:"columns"`
 	}
 	Eav []struct {
@@ -51,6 +52,9 @@ func (c Config) String() ([]byte, error) {
 func (c Config) ProcessTable(t string) string {
 	for _, table := range c.Tables {
 		if (table.Name == t) {
+			if (table.Truncate == "true") {
+				return "truncate"
+			}
 			return "table"
 		}
 	}

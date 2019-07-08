@@ -32,6 +32,9 @@ func (p LineProcessor) ProcessLine(s string) string {
 	case "":
 		// This table doesn't need to be processed
 		return s
+	case "truncate":
+		// This table must be truncated
+ 		return ""
 	case "table":
 		// "Classic" processing
 		rows := insert.Rows.(sqlparser.Values)

@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/mpchadwick/dbanon/src"
+	"github.com/jetpulp/dbanon/src"
 	"io/ioutil"
 	"log"
 	"os"
